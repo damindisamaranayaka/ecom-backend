@@ -21,7 +21,8 @@ class UserController extends Controller
         $user= User::where('email', $req->email) ->first();
         if($user && Hash::check($req->password, $user->password))
         {
-            return response()->json(['message' => 'Login successful', 'user' => $user]);
+            return $user;
+            // return response()->json(['message' => 'Login successful', 'user' => $user]);
         }
             return response()->json(['message' => 'Invalid credentials'], 401);
     }

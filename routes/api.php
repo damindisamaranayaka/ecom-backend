@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\productController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('register1', [UserController::class, 'register']);          //in postman type post method and http://localhost:8000/api/register1
 Route::post('login', [UserController::class, 'login']);
+Route::post('products',[productController::class, 'addProduct']); 
